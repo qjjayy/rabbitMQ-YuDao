@@ -1,0 +1,17 @@
+spring:
+  # RabbitMQ 配置项，对应 RabbitProperties 配置类
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: dev_kerrigan
+    listener:
+      simple:
+        # 对应 RabbitProperties.ListenerRetry 类
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 1000
+    publisher-confirm-type: correlated
+#    publisher-confirm-type: simple
